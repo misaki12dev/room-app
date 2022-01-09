@@ -1,0 +1,22 @@
+<div class="devise sign-up col-md-5 mx-auto border p-5">
+
+  <h2 class="text-center h5 mb-3">ログイン</h2>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field mb-3">
+    <div class="required-field"></div>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "メールアドレス", class: "form-control col-10 px-2"%>
+  </div>
+
+  <div class="field mb-3">
+    <div class="required-field"></div>
+    <%= f.password_field :password, autocomplete: "current-password", :placeholder => "パスワード", class: "form-control col-10 px-2"%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "ログイン", class: "form-control btn-primary my-4" %>
+  </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>

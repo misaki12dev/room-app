@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.sign-up .field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.required-field::before {
+  content: "必須";
+  color: white;
+  background-color: #ff0000a8;
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 3px 5px;
+  margin-right: 20px;
+}
+
+// header
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.header-left h1 {
+  color: #fff;
+}
+
+.nav-items-right {
+  display: flex;
+}

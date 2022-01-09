@@ -1,0 +1,29 @@
+<header class="bg-dark">
+  <div class="header-inner">
+
+    <div class="header-left">
+      <%= link_to root_path, class: "" do %>
+      <h1 class="h1 white">RoomShare</h1>
+      <% end %>
+    </div>
+
+    <div class="header-right">
+      <% if user_signed_in? %>
+      <div class="nav-item">
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-primary my-2 mx-3" %>
+      </div>
+      <% else %>
+
+      <div class="nav-items-right">
+        <div class="nav-item">
+          <%= link_to "ログイン", new_user_session_path, class: "btn btn-primary my-2 mx-3" %>
+        </div>
+        <div class="nav-item">
+          <%= link_to "新規登録", new_user_registration_path, class: "btn btn-secondary my-2 mx-3" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</header>
