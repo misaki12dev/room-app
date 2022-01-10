@@ -1,15 +1,14 @@
 <header class="bg-dark">
   <div class="header-inner">
-
     <div class="header-left">
-      <%= link_to root_path, class: "" do %>
+      <%= link_to root_path do %>
       <h1 class="h1 white">RoomShare</h1>
       <% end %>
     </div>
-
     <div class="header-right">
       <% if user_signed_in? %>
       <div class="nav-item">
+        <span class="user-name"><%= current_user.user_name %></span>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-primary my-2 mx-3" %>
       </div>
       <% else %>
@@ -24,6 +23,4 @@
         <% end %>
       </div>
     </div>
-
-  </div>
 </header>

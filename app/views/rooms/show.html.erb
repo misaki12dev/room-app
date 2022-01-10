@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="room-detail">
+    <div class="row">
+      <div class="col-8">
+        <div class="room-image pb-3">
+          <%= image_tag @room.room_image.to_s %>
+        </div>
+        <div class="room-name pb-3">
+          <%= @room.room_name %>
+        </div>
+        <div class="room-address pb-3">
+          <%= @room.room_address %></div>
+        <div class="room-description border-top border-bottom pt-3 pb-3">
+          <%= @room.room_description %>
+        </div>
+      </div>
+      <!--end col-8-->
+      <div class="col-4">
+        <div class="room-price">
+          ¥ <%= @room.room_price %> /日
+        </div>
+      </div>
+      <!--end col-4-->
+    </div>
+  </div>
+</div>
