@@ -1,3 +1,12 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.room-reserve {
+  border: 1px solid #eaedef;
+  padding: 15px;
+}
+
+.room-reserve input {
+  width: 100%;
+}

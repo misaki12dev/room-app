@@ -1,0 +1,32 @@
+// Place all the styles related to the reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// 予約確認画面
+
+.confirm {
+  margin: 50px auto;
+  padding: 15px;
+  border: 1px solid #eaedef;
+}
+
+.confirm h4 {
+  border-bottom: 1px solid #eaedef;
+}
+
+.confirm .room-price {
+  padding-bottom: 30px;
+  font-size: 24px;
+}
+
+.confirm p {
+  padding-bottom: 20px;
+}
+
+
+// 予約確定画面
+
+.complete {
+  margin: 50px 0;
+  border: 1px solid #eaedef;
+}
