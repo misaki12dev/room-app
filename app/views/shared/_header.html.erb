@@ -5,6 +5,19 @@
       <h1 class="h1 white">RoomShare</h1>
       <% end %>
     </div>
+    
+    <div>
+      <%= form_tag(search_path,:method => 'get') do %>
+      <%= text_field_tag :search , "", placeholder: "エリア"%>
+      <%= submit_tag '検索'%>
+      <% end %>
+
+      <%= form_tag(search_path,:method => 'get') do %>
+      <%= text_field_tag :keyword, "", placeholder: "キーワード" %>
+      <%= submit_tag '検索' %>
+      <% end %>
+    </div>
+
     <div class="header-right">
       <% if user_signed_in? %>
       <div class="nav-item">

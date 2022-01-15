@@ -38,6 +38,13 @@ class RoomsController < ApplicationController
     @posts = Room.all
   end
 
+
+  def search
+    @rooms = Room.search(params[:search], params[:keyword])
+    render "index"
+  end
+
+
   private
   def room_params
    params.require(:room).permit(:room_name, :room_description, :room_price, :room_address, :room_image, :user_id)

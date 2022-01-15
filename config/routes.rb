@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   root to: "home#index"
   get "/rooms/posts" => "rooms#posts"
-  # post 'reservations/create'
-  # post "reservations/" => "reservation#create"
+  get 'search' => 'rooms#search'
   devise_for :users
   resources :rooms
   resources :reservations

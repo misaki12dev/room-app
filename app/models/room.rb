@@ -10,4 +10,14 @@ class Room < ApplicationRecord
   validates :room_address,presence: true
   validates :room_price, presence: true
   validates :room_image, presence: true
+
+    def self.search(search, keyword)
+      if search
+        Room.where(['room_address like ?', "%#{search}%"])
+      elsif keyword
+        Room.where(["room_name like? OR room_address like? OR room_description like?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"])
+      end
+  end
+
+
 end
