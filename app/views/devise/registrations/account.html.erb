@@ -1,0 +1,17 @@
+<div class="container inner">
+  <div class="col-8 mx-auto">
+    <table class="table">
+      <tbody>
+        <tr>
+          <th>メールアドレス</th>
+          <td><%= @user.email %></td>
+        </tr>
+        <tr>
+          <th>パスワード</th>
+          <td><%= @user.password %></td>
+        </tr>
+      </tbody>
+    </table>
+    <%= link_to "編集", edit_user_registration_path, class: "btn btn-light" %>
+  </div>
+</div>

@@ -1,30 +1,30 @@
-<div class="container">
-  <div class="confirm col-6 mx-auto">
-    <h4 class="pb-4">予約内容確認</h4>
+<div class="container inner">
+  <div class="confirm col-8 mx-auto">
+    <h3 class="pb-4">予約内容確認</h4>
 
-    <div class="room-price"><%= @reservation.room.room_price %> / 日</div>
+      <div class="room-price"><%= @reservation.room.room_price %> / 日</div>
 
-    <p>チェックイン<br>
-      <%= @reservation.start_date %>
-    </p>
-    <p>チェックアウト<br>
-      <%= @reservation.end_date %>
-    </p>
-    <p class="border-bottom">使用日数：<%= @reservation.days_gap %></p>
-    <p class="border-bottom">人数:
-      <%= @reservation.number_of_people %>
-    </p>
-    <p class="border-bottom">合計金額：<%= @reservation.total_price %>円</p>
+      <p>チェックイン<br>
+        <%= @reservation.start_date %>
+      </p>
+      <p>チェックアウト<br>
+        <%= @reservation.end_date %>
+      </p>
+      <p class="border-bottom">使用日数：<%= @reservation.days_gap %></p>
+      <p class="border-bottom">人数:
+        <%= @reservation.number_of_people %>
+      </p>
+      <p class="border-bottom">合計金額：<%= @reservation.total_price %>円</p>
 
-    <%= form_with(model: @reservation, url: reservations_path, method: :post, local: true) do |f| %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.hidden_field :room_id, value: @reservation.room.id %>
-    <%= f.hidden_field :room_price, value: @reservation.room.room_price %>
-    <%= f.hidden_field :start_date %>
-    <%= f.hidden_field :end_date %>
-    <%= f.hidden_field :number_of_people %>
-    <%= f.submit "予約を確定" , class: "btn btn-primary form-control my-3" %>
-    <% end %>
-    <%= link_to "ルーム詳細へ戻る", room_path(@reservation.room.id), class: "btn btn-light form-control" %>
+      <%= form_with(model: @reservation, url: reservations_path, method: :post, local: true) do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :room_id, value: @reservation.room.id %>
+      <%= f.hidden_field :room_price, value: @reservation.room.room_price %>
+      <%= f.hidden_field :start_date %>
+      <%= f.hidden_field :end_date %>
+      <%= f.hidden_field :number_of_people %>
+      <%= f.submit "予約を確定" , class: "btn btn-primary form-control my-3" %>
+      <% end %>
+      <%= link_to "ルーム詳細へ戻る", room_path(@reservation.room.id), class: "btn btn-light form-control" %>
   </div>
 </div>

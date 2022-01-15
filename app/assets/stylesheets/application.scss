@@ -31,6 +31,10 @@ body,
   min-height: 100vh;
 }
 
+.inner {
+  padding: 60px 0 100px;
+}
+
 img {
   width: 100%;
 }
@@ -40,19 +44,46 @@ a {
   color: black;
 }
 
-.logo {
-  font-size: 20px;
-  margin: 0;
-}
-
-h1 {
-  font-family: 'Quicksand', sans-serif;
+h3 {
+  font-size: 22px;
 }
 
 .notice {
   background: #dfb7c5;
   color: #fff;
   margin: 0;
+}
+
+/* Header */
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .15) !important;
+
+  .header-left {
+    display: flex;
+    align-items: center;
+
+    h1 {
+      margin-right: 30px;
+      font-size: 22px;
+    }
+
+    .header-search {
+      display: flex;
+
+      :first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.nav-items-right {
+  display: flex;
 }
 
 .user-name {
@@ -64,6 +95,11 @@ h1 {
   width: 60px;
   height: 60px;
   border-radius: 50%;
+}
+
+.home-search {
+  background-color: #e9ecef !important;
+  border: none !important;
 }
 
 /* User登録 */
@@ -80,42 +116,11 @@ h1 {
   border-radius: 5px;
   font-size: 12px;
   padding: 3px 5px;
-  margin-right: 20px;
+  margin-right: 5px;
+  white-space: nowrap;
 }
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 20px;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, .15) !important;
-}
-
-.home-search {
-  background-color: #e9ecef !important;
-  border: none !important;
-}
-
-.header-left h1 {
-  margin-right: 30px;
-}
-
-.nav-items-right {
-  display: flex;
-}
-
-.header-search {
-  display: flex;
-
-  :first-child {
-    margin-right: 20px;
-  }
-}
-
-.header-left {
-  display: flex;
-  align-items: center;
-}
+/* footer */
 
 footer {
   position: absolute;

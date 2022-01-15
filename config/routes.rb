@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/profile', to: 'users/registrations#profile', as: "profile"
     patch '/users/profile_update', to: 'users/registrations#profile_update', as: "profile_update"
+    get '/users/account', to: 'users/registrations#account', as: "account"
   end
   resources :rooms
   resources :reservations

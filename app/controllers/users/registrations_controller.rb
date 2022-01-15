@@ -1,5 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :authenticate_user!, only: [:profile, :profile_update]
+  before_action :authenticate_user!
   before_action :configure_account_update_params, only: [:profile_update]
 
   def profile
@@ -14,6 +14,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       render root_path
     end
+  end
+
+  def account
+    @user = current_user
   end
 
   def user_params

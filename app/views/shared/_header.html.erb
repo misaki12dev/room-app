@@ -4,27 +4,31 @@
       <%= link_to root_path do %>
       <h1 class="h1 logo white">RoomShare</h1>
       <% end %>
-      <div class="header-search">
-        <%= form_tag(search_path,:method => 'get') do %>
-        <%= text_field_tag :search , "", placeholder: "エリア", class: "form-control-sm form-control home-search" %>
-        <%= submit_tag '検索', class: "d-none" %>
-        <% end %>
+      <div class="d-none d-lg-block">
+        <div class="header-search">
+          <%= form_tag(search_path,:method => 'get') do %>
+          <%= text_field_tag :search , "", placeholder: "エリア", class: "form-control-sm form-control home-search" %>
+          <%= submit_tag '検索', class: "d-none" %>
+          <% end %>
 
-        <%= form_tag(search_path,:method => 'get') do %>
-        <%= text_field_tag :keyword, "", placeholder: "キーワード" , class: "form-control-sm form-control home-search" %>
-        <%= submit_tag '検索w', class: "d-none" %>
-        <% end %>
+          <%= form_tag(search_path,:method => 'get') do %>
+          <%= text_field_tag :keyword, "", placeholder: "キーワード" , class: "form-control-sm form-control home-search" %>
+          <%= submit_tag '検索w', class: "d-none" %>
+          <% end %>
+        </div>
       </div>
     </div>
-
     <div class="header-right">
       <% if user_signed_in? %>
-      <div class="nav-item">
-        <span class="user-name"><%= current_user.user_name %></span>
-        <span class="user-image"><%= image_tag current_user.profile_image_id.to_s %></span>
+      <div class="nav-item d-flex align-items-center">
+        <div class="user-name mr-3">
+          <%= current_user.user_name %>
+        </div>
+        <% if current_user.profile_image_id? %>
+        <div class="user-image"><%= image_tag current_user.profile_image_id.to_s %></div>
+        <% end %>
       </div>
       <% else %>
-
       <div class="nav-items-right">
         <div class="nav-item">
           <%= link_to "ログイン", new_user_session_path, class: "btn btn-primary my-2 mx-3" %>
