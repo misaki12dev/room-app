@@ -10,3 +10,66 @@
 .room-reserve input {
   width: 100%;
 }
+
+/* Room登録 */
+.room-new-bk {
+  background-color: #F6F8F9;
+}
+
+.room-new-inner {
+  border: 1px solid #eaedef;
+  background-color: #fff;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px 10px;
+}
+
+.room-input-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #eaedef;
+  padding: 15px 20px;
+}
+
+.room-img {
+  width: 280px;
+}
+
+.form input,
+.form textarea {
+  border: 1px solid #eaedef;
+  padding: 10px 0;
+}
+
+// Room Posts
+.room-posts {
+  padding: 50px 45px;
+}
+
+.room-posts table thead tr th {
+  padding: 10px
+}
+
+.room-posts table tbody tr td {
+  padding: 10px;
+}
+
+.room-posts img {
+  max-width: 280px;
+}
+
+// room index
+.card-inner {
+  border: 1px solid #eaedef;
+}
+
+//room-detail
+
+.room-detail {
+  padding: 45px 15px;
+}
+
+.room-detail img {
+  width: 100%;
+}
