@@ -49,7 +49,22 @@ h1 {
   font-family: 'Quicksand', sans-serif;
 }
 
-.user-name {}
+.notice {
+  background: #dfb7c5;
+  color: #fff;
+  margin: 0;
+}
+
+.user-name {
+  margin-left: 20px;
+}
+
+.user-image img {
+  width: 100%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
 
 /* User登録 */
 .sign-up .field {

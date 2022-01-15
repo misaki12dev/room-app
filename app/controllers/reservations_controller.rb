@@ -9,24 +9,20 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new(reservation_params)
-    # @room = Room.find(params[:id])
+    if @reservation.invalid?
+      redirect_to room_path(@reservation.room_id)
 
-    # binding.pry
-    # @reservation.room_id = Room.find(params[:id])
-
+    else
+      @days_gap = @reservation.days_gap
+      @reservation.total_price = @reservation.room.room_price * @reservation.number_of_people * @days_gap
+    end
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user_id = current_user.id
-    if @reservation.save
-
-      # binding.pry
-
+    @reservation.save
       redirect_to reservation_path(@reservation.id)
-    else
-      render "new"
-    end
   end
 
   def show

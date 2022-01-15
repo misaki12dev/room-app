@@ -20,7 +20,7 @@
           <div class="room-price pb-3 bold fs-4">
             ¥ <%= @room.room_price %> /日</div>
           <div>
-            <%= form_with(model: @reservation, url: new_reservation_path, method: :get, local: true) do |f| %>
+            <%= form_with model: @reservation, url: new_reservation_path, method: :get, local: true do |f| %>
             <%= f.hidden_field :user_id,  value: current_user.id %>
             <%= f.hidden_field :room_id,  value: @room.id %>
             <p><%= f.label :start_date , 'チェックイン' %><br>

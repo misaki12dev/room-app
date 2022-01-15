@@ -19,11 +19,12 @@
     <%= form_with(model: @reservation, url: reservations_path, method: :post, local: true) do |f| %>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :room_id, value: @reservation.room.id %>
+    <%= f.hidden_field :room_price, value: @reservation.room.room_price %>
     <%= f.hidden_field :start_date %>
     <%= f.hidden_field :end_date %>
     <%= f.hidden_field :number_of_people %>
     <%= f.submit "予約を確定" , class: "btn btn-primary form-control my-3" %>
     <% end %>
-
+    <%= link_to "ルーム詳細へ戻る", room_path(@reservation.room.id), class: "btn btn-light form-control" %>
   </div>
 </div>
