@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :posts]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   def index
     @rooms = Room.all
   end
@@ -25,6 +25,16 @@ class RoomsController < ApplicationController
   end
 
   def edit
+    @room = Room.find(params[:id])
+  end
+
+  def update
+    @room = Room.find(params[:id])
+    if @room.update(room_params)
+      redirect_to rooms_posts_path
+    else
+      render "edit"
+    end
   end
 
   def destroy
@@ -40,7 +50,7 @@ class RoomsController < ApplicationController
 
 
   def search
-    @rooms = Room.search(params[:search], params[:keyword])
+    @rooms = Room.search(params[:area], params[:keyword])
     render "index"
   end
 

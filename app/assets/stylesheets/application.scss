@@ -262,16 +262,26 @@ nav.globalMenuSp.active {
   border-right: 3px solid #ff0000a8;
 }
 
-@media only screen and (max-width: 768px) {
-  .sidenav li.active {
-    border-right: 0;
-    border-bottom: 3px solid #ff0000a8;
-  }
-}
-
 /* footer */
 footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+/* SP */
+
+@media only screen and (max-width: 768px) {
+  .inner {
+    padding: 30px 15px 50px;
+  }
+
+  .mv {
+    height: 60vh;
+  }
+
+  .sidenav li.active {
+    border-right: 0;
+    border-bottom: 3px solid #ff0000a8;
+  }
 }

@@ -1,24 +1,24 @@
 <div class="container inner">
-  <div class="room-posts">
+  <div class="row mx-auto">
     <h3>登録済みルーム一覧</h3>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>ルーム画像</th>
-          <th>ルーム画像</th>
-          <th>ルーム紹介</th>
-          <th>料金</th>
-          <th>作成日</th>
-        </tr>
-      </thead>
+    <table class="reservations-table table table-striped">
+      <tr class="thead">
+        <th>ルーム画像</th>
+        <th>ルーム画像</th>
+        <th>ルーム紹介</th>
+        <th>料金</th>
+        <th>作成日</th>
+        <th>編集</th>
+      </tr>
       <tbody>
         <% @posts.each do |room| %>
         <tr>
-          <td><%= link_to image_tag(room.room_image.url), room_path(room.id) %></td>
-          <td><%= link_to room.room_name, room_path(room.id) %></td>
-          <td><%= room.room_description %></td>
-          <td>¥ <%= room.room_price %></td>
-          <td><%= room.created_at.to_s(:datetime_jp) %></td>
+          <td data-label="ルーム名："><%= link_to room.room_name, room_path(room.id) %></td>
+          <td data-label="画像："><%= link_to image_tag(room.room_image.url), room_path(room.id) %></td>
+          <td data-label="説明："><%= room.room_description %></td>
+          <td data-label="料金：">¥ <%= room.room_price %></td>
+          <td data-label="作成日："><%= room.created_at.to_s(:datetime_jp) %></td>
+          <td data-label="編集："><%= link_to "編集", edit_room_path(room.id) %></td>
         </tr>
         <% end %>
       </tbody>

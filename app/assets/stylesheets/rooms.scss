@@ -6,10 +6,10 @@
 .room-reserve {
   border: 1px solid #eaedef;
   padding: 15px;
-}
 
-.room-reserve input {
-  width: 100%;
+  input {
+    width: 100%;
+  }
 }
 
 // New
@@ -34,17 +34,4 @@
 .form textarea {
   border: 1px solid #eaedef;
   padding: 10px 0;
-}
-
-// Posts
-.room-posts table thead tr th {
-  padding: 10px
-}
-
-.room-posts table tbody tr td {
-  padding: 10px;
-}
-
-.room-posts img {
-  max-width: 280px;
 }

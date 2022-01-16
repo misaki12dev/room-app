@@ -2,22 +2,60 @@
 .confirm {
   padding: 15px;
   border: 1px solid #eaedef;
-}
 
-.confirm h4 {
-  border-bottom: 1px solid #eaedef;
-}
+  h4 {
+    border-bottom: 1px solid #eaedef;
+  }
 
-.confirm .room-price {
-  padding-bottom: 30px;
-  font-size: 24px;
-}
+  .room-price {
+    padding-bottom: 30px;
+    font-size: 24px;
+  }
 
-.confirm p {
-  padding-bottom: 20px;
+  p {
+    padding-bottom: 20px;
+  }
+
 }
 
 // 予約確定画面
 .complete {
   border: 1px solid #eaedef;
+  padding: 20px;
+}
+
+// 予約一覧
+.reservations-table img {
+  width: 200px;
+}
+
+@media screen and (max-width: 768px) {
+  .reservations-table .reservations-table tr,
+  .reservations-table td {
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+
+  .reservations-table {
+    .thead {
+      display: none;
+    }
+
+    tr {
+      margin-bottom: 40px;
+    }
+
+    td:before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    td:first-child {
+      background: #e6b3b8;
+      font-weight: bold;
+    }
+  }
 }

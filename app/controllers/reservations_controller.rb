@@ -32,11 +32,12 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
+    flash[:notice] = "予約をキャンセルしました"
+    redirect_to reservations_path
   end
 
   private
   def reservation_params
-    # params.require(:reservation).permit(:start_date, :end_date, :number_of_people).merge(room_id: params[:room_id], user_id: current_user.id)
     params.require(:reservation).permit(:start_date, :end_date, :number_of_people, :room_id, :user_id)
   end
 
