@@ -1,42 +1,63 @@
-<header class="">
+<header id="header">
   <div class="header-inner">
+    <!--Header Left-->
     <div class="header-left">
       <%= link_to root_path do %>
-      <h1 class="h1 logo white">RoomShare</h1>
+      <h1>RoomShare</h1>
       <% end %>
       <div class="d-none d-lg-block">
-        <div class="header-search">
+        <div class="header-search d-lg-inline-block">
           <%= form_tag(search_path,:method => 'get') do %>
-          <%= text_field_tag :search , "", placeholder: "エリア", class: "form-control-sm form-control home-search" %>
-          <%= submit_tag '検索', class: "d-none" %>
+          <%= text_field_tag :search , "", placeholder: "エリア", class: "form-control-sm form-control search-box" %>
           <% end %>
-
+          <i class="fa fa-map-pin"></i>
+        </div>
+        <div class="header-search d-lg-inline-block">
           <%= form_tag(search_path,:method => 'get') do %>
-          <%= text_field_tag :keyword, "", placeholder: "キーワード" , class: "form-control-sm form-control home-search" %>
-          <%= submit_tag '検索w', class: "d-none" %>
+          <%= text_field_tag :keyword, "", placeholder: "キーワード" , class: "form-control-sm form-control search-box" %>
           <% end %>
+          <i class="fa fa-search"></i>
         </div>
       </div>
     </div>
+    <!--//Header Left-->
+
+    <!--Header Right-->
     <div class="header-right">
       <% if user_signed_in? %>
-      <div class="nav-item d-flex align-items-center">
-        <div class="user-name mr-3">
-          <%= current_user.user_name %>
+      <div class="d-flex">
+        <div class="d-flex mr-5 align-items-center">
+          <div class="mr-3">
+            <%= current_user.user_name %>
+          </div>
+          <% if current_user.profile_image_id? %>
+          <div class="user-image"><%= image_tag current_user.profile_image_id.to_s %></div>
+          <% end %>
         </div>
-        <% if current_user.profile_image_id? %>
-        <div class="user-image"><%= image_tag current_user.profile_image_id.to_s %></div>
-        <% end %>
-      </div>
-      <% else %>
-      <div class="nav-items-right">
-        <div class="nav-item">
+        <!--hamburger menu-->
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav class="globalMenuSp">
+          <ul>
+            <li><%= link_to "ルーム登録", new_room_path %></li>
+            <li><%= link_to "登録済みルーム一覧", rooms_posts_path %></li>
+            <li><%= link_to "予約済みルーム一覧", reservations_path %></li>
+            <li><%= link_to "設定", account_path %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete  %></li>
+          </ul>
+        </nav>
+        <!--//hamburger menu-->
+        <% else %>
+        <div class="d-flex">
           <%= link_to "ログイン", new_user_session_path, class: "btn btn-primary my-2 mx-3" %>
-        </div>
-        <div class="nav-item">
           <%= link_to "新規登録", new_user_registration_path, class: "btn btn-secondary my-2 mx-3" %>
+          <% end %>
         </div>
-        <% end %>
       </div>
     </div>
+    <!--//Header Right-->
+  </div>
 </header>

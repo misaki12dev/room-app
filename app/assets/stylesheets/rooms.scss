@@ -1,5 +1,3 @@
-/* ROOM登録 */
-
 // Index
 .card-inner {
   border: 1px solid #eaedef;
@@ -15,11 +13,7 @@
 }
 
 // New
-.room-new-bk {
-  background-color: #F6F8F9;
-}
-
-.room-new-inner {
+.room-new {
   border: 1px solid #eaedef;
   padding: 20px 10px;
 }
@@ -43,10 +37,6 @@
 }
 
 // Posts
-.room-posts {
-  padding: 50px 45px;
-}
-
 .room-posts table thead tr th {
   padding: 10px
 }
