@@ -48,12 +48,10 @@ class RoomsController < ApplicationController
     @posts = Room.all
   end
 
-
   def search
     @rooms = Room.search(params[:area], params[:keyword])
     render "index"
   end
-
 
   private
   def room_params

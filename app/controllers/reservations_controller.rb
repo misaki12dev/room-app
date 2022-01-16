@@ -9,9 +9,9 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new(reservation_params)
+    @room = Room.find_by(params[:id])
     if @reservation.invalid?
-      redirect_to room_path(@reservation.room_id)
-
+      render "rooms/show"
     else
       @days_gap = @reservation.days_gap
       @reservation.total_price = @reservation.room.room_price * @reservation.number_of_people * @days_gap
