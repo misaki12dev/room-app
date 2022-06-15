@@ -1,0 +1,40 @@
+<div class="container inner">
+  <div class="row">
+    <div class="col-12 col-lg-8 mx-auto">
+      <div class="room-new mx-auto">
+        <h3><i class="fa fa-home 5x pr-1"></i>ルーム情報編集</h3>
+        <%= form_with model: @room do |f|%>
+        <div class="room-input-item">
+          <%= f.label :room_name, "ルーム名", class: "col-md-3" %>
+          <%= f.text_field :room_name %>
+        </div>
+        <div class="room-input-item">
+          <%= f.label :room_description, "説明", class: "col-md-3" %>
+          <%= f.text_field :room_description %>
+        </div>
+        <div class="room-input-item">
+          <%= f.label :room_price, "料金", class: "col-md-3" %>
+          <%= f.text_field :room_price %>
+        </div>
+        <div class="room-input-item">
+          <%= f.label :room_address, "住所", class: "col-md-3" %>
+          <%= f.text_field :room_address %>
+        </div>
+        <div class="room-input-item">
+          <%= f.label :room_image, "ルーム画像", class: "col-md-3" %>
+          <%= f.file_field :room_image %>
+        </div>
+        <div class="mt-3 col-10 col-lg-5">
+          <ul class="input_box">
+            <li><%= f.submit"編集を完了する", class: "btn btn-primary mb-2 form-control"%></li>
+            <li><%= link_to "削除", @room, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-secondary mb-2 form-control" %></li>
+            <li><%= link_to"ルーム登録一覧に戻る", rooms_posts_path, class: "btn btn-secondary form-control" %></li>
+          </ul>
+        </div>
+        <%end%>
+
+      </div>
+    </div>
+  </div>
+
+</div>

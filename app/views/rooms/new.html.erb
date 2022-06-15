@@ -1,0 +1,48 @@
+<div class="container inner">
+  <%= render "shared/errors", model: @room %>
+  <div class="row">
+    <div class="col-12 col-lg-8 mx-auto">
+      <div class="room-new mx-auto">
+        <div class="room-input-item">
+          <h3><i class="fa fa-home 5x pr-1"></i>ルーム情報登録</h5>
+        </div>
+        <%= form_with model: @room do |f| %>
+
+        <div class="form room-input-item mb-3">
+          <div class="required-field"></div>
+          <%= f.label :room_name, 'ルーム名', class: "col-md-3" %><br>
+          <%= f.text_field :room_name, :placeholder => "ルーム名を入力", class: "col-md-7 p-1" %>
+        </div>
+
+        <div class="form room-input-item mb-3">
+          <div class="required-field"></div>
+          <%= f.label :room_description, 'ルーム紹介', class: "col-md-3" %><br>
+          <%= f.text_area :room_description, :placeholder => "ルームの説明を入力", class: "col-md-7 p-1" %>
+        </div>
+
+        <div class="form room-input-item mb-3">
+          <div class="required-field"></div>
+          <%= f.label :room_price, '料金', class: "col-md-3" %><br>
+          <%= f.text_field :room_price, :placeholder => "一日あたりの料金", class: "col-md-7 p-1" %>
+        </div>
+
+        <div class="form room-input-item mb-3">
+          <div class="required-field"></div>
+          <%= f.label :room_address, '住所', class: "col-md-3" %><br>
+          <%= f.text_field :room_address, :placeholder => "住所を入力", class: "col-md-7 p-1" %>
+        </div>
+
+        <div class="room-input-item mb-3">
+          <div class="required-field"></div>
+          <%= f.label :room_image, "ルーム画像", class: "col-md-3" %>
+          <%= f.file_field :room_image %>
+        </div>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <div><%= f.submit class: "col-md-2 btn btn-primary" %></div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>

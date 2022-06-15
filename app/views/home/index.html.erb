@@ -1,0 +1,38 @@
+<section class="mv py-5 text-center">
+  <div class="py-lg-5 col-lg-4">
+    <div class="card card-lg mx-auto">
+      <div class="card-body">
+        <p>Potepan Shareでまだ体験したことのない旅をしよう</p>
+        <%= form_tag(search_path,:method => 'get') do %>
+        <%= text_field_tag :area , "", placeholder: "エリア", class: "form-control" %>
+        <%= submit_tag '探す', class: "btn btn-primary w-100 mt-3" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="home py-5 mb-5 container">
+  <div class="col-md-8 pb-3">
+    <h2>おすすめエリア</h2>
+  </div>
+
+  <div class="row">
+    <div class="home-area col-lg-3 col-sm-6 mb-5">
+      <%= link_to image_tag("/assets/img_tokyo.jpg", class: "area-img"), search_path(:area => "東京") %>
+      <span>東京</span>
+    </div>
+    <div class="home-area col-lg-3 col-sm-6 mb-5">
+      <%= link_to image_tag("/assets/img_osaka.jpg", class: "area-img"), search_path(:area => "大阪") %>
+      <span>大阪</span>
+    </div>
+    <div class="home-area col-lg-3 col-sm-6 mb-5">
+      <%= link_to image_tag("/assets/img_kyoto.jpg", class: "area-img"), search_path(:area => "京都") %>
+      <span>京都</span>
+    </div>
+    <div class="home-area col-lg-3 col-sm-6 mb-5">
+      <%= link_to image_tag("/assets/img_sapporo.jpg", class: "area-img"), search_path(:area => "札幌") %>
+      <span>札幌</span>
+    </div>
+  </div>
+</div>

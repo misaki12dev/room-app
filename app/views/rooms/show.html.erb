@@ -1,0 +1,47 @@
+<div class="container inner">
+<%= render 'shared/errors', model: @reservation %>
+
+  <div class="room-detail">
+    <div class="row">
+      <div class="col-xl-8 col-10 mx-auto">
+        <div class="room-image pb-3">
+          <%= image_tag @room.room_image.to_s %>
+        </div>
+        <div class="room-name pb-3">
+          <%= @room.room_name %>
+        </div>
+        <div class="room-address pb-3">
+          <%= @room.room_address %></div>
+        <div class="room-description border-top border-bottom pt-3 pb-3">
+          <%= @room.room_description %>
+        </div>
+      </div>
+      <!--end col-8-->
+      <div class="col-xl-4 col-10 mx-auto">
+        <div class="room-reserve">
+          <div class="room-price pb-3 bold fs-4">
+            ¥ <%= @room.room_price %> /日</div>
+          <div>
+            <%= form_with model: @reservation, url: new_reservation_path, method: :get, local: true do |f| %>
+            <% if user_signed_in? %>
+            <%= f.hidden_field :user_id,  value: current_user.id %>
+            <% end%>
+            <%= f.hidden_field :room_id,  value: @room.id %>
+            <p><%= f.label :start_date , 'チェックイン' %><br>
+              <%= f.date_field :start_date %>
+            </p>
+            <p><%= f.label :end_date , 'チェックアウト' %><br>
+              <%= f.date_field :end_date %>
+            </p>
+            <p><%= f.label :number_of_people, '人数' %><br>
+              <%= f.text_field :number_of_people %>
+            </p>
+            <p><%= f.submit class: "btn btn-primary" %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <!--end col-4-->
+    </div>
+  </div>
+</div>

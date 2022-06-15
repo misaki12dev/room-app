@@ -1,0 +1,26 @@
+<div class="container inner">
+  <div class="room">
+    <h3 class="pb-3">検索結果：<%= @rooms.count%>件</h3>
+
+    <div class="row">
+      <% @rooms.each do |room| %>
+      <div class="col-sm-6 col-lg-4 col-xl-3">
+        <div class="card-inner mb-3 secondary">
+          <%= link_to(room_path(room.id)) do %>
+          <img src="<%= room.room_image %>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= room.room_name %></h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= room.room_address %></li>
+            <li class="list-group-item">¥<%= room.room_price %></li>
+          </ul>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+
+  </div>
+</div>

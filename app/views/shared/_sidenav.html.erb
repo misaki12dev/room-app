@@ -1,0 +1,6 @@
+ <div class="col-lg-3 col-12">
+   <ul class="d-flex d-lg-block text-center sidenav">
+     <li class="p-3 <%= 'active' if current_page?(account_path) %>"><%= link_to 'アカウント', account_path %></li>
+     <li class="p-3 <%= 'active' if current_page?(profile_path) %>"><%= link_to 'プロフィール', profile_path %></li>
+   </ul>
+ </div>

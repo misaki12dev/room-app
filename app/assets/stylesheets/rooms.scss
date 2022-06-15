@@ -1,0 +1,37 @@
+// Index
+.card-inner {
+  border: 1px solid #eaedef;
+}
+
+.room-reserve {
+  border: 1px solid #eaedef;
+  padding: 15px;
+
+  input {
+    width: 100%;
+  }
+}
+
+// New
+.room-new {
+  border: 1px solid #eaedef;
+  padding: 20px 10px;
+}
+
+.room-input-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #eaedef;
+  padding: 15px 20px;
+}
+
+.room-img {
+  width: 280px;
+}
+
+.form input,
+.form textarea {
+  border: 1px solid #eaedef;
+  padding: 10px 0;
+}

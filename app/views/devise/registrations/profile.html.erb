@@ -1,0 +1,32 @@
+<div class="container inner">
+  <div class="row mx-auto">
+    <%= render 'shared/sidenav' %>
+    <div class="col-12 col-lg-8">
+      <div class="room-new mx-auto">
+        <div class="room-new-inner">
+          <div class="room-input-item">
+            <h3>ユーザー情報登録</h3>
+          </div>
+          <%= form_with model: @user, url: {action: "profile_update"} do |f| %>
+          <div class="form room-input-item mb-3">
+            <div class="required-field"></div>
+            <%= f.label :user_name, 'ユーザー名', class: "col-md-3" %><br>
+            <%= f.text_field :user_name, :placeholder => "ユーザー名を入力", class: "col-md-7 p-1" %>
+          </div>
+          <div class="form room-input-item mb-3">
+            <div class="required-field"></div>
+            <%= f.label :user_introduction, '自己紹介', class: "col-md-3" %><br>
+            <%= f.text_area :user_introduction, :placeholder => "自己紹介をしてね", class: "col-md-7 p-1" %>
+          </div>
+          <div class="room-input-item mb-3">
+            <div class="required-field"></div>
+            <%= f.label :profile_image_id, "プロフィール画像", class: "col-md-3" %>
+            <%= f.file_field :profile_image_id %>
+          </div>
+          <div><%= f.submit class: "col-md-2 btn btn-primary mx-3" %></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

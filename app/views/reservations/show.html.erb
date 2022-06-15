@@ -1,0 +1,28 @@
+<div class="container inner">
+  <div class=" col-8 mx-auto complete">
+    <h3>予約確定</h3>
+    <table class="table">
+      <tbody>
+        <tr>
+          <th scope="row">ルーム名</th>
+          <td><%= @reservation.room.room_name %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">チェックイン</th>
+          <td><%= @reservation.start_date %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">チェックアウト</th>
+          <td colspan="2"><%= @reservation.end_date %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">料金</th>
+          <td colspan="2"><%= @reservation.total_price %>円</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
